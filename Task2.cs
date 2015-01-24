@@ -111,7 +111,7 @@ namespace HW_TelrikFramework_Task1
             //
             // Place any additional initialization here
             //
-            Manager.LaunchNewBrowser();
+            Manager.LaunchNewBrowser(BrowserType.Chrome, true);
             ActiveBrowser.NavigateTo("http://www.webestools.com/ftp/ybouane/scripts_tutorials/javascript/calculator/calculator.html");
 
         }

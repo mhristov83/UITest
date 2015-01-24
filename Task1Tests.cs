@@ -51,6 +51,7 @@ namespace HW_TelrikFramework_Task1
         [ClassInitialize()]
         public static void MyClassInitialize(TestContext testContext)
         {
+            
         }
 
 
@@ -109,9 +110,7 @@ namespace HW_TelrikFramework_Task1
 
             #endregion
 
-            //
-            // Place any additional initialization here
-            //
+            
 
         }
 
@@ -149,7 +148,9 @@ namespace HW_TelrikFramework_Task1
         [TestMethod]
         public void CheckSelect()
         {
-            Manager.LaunchNewBrowser();
+            Settings set = new Settings();
+            set.Web.DefaultBrowser = BrowserType.Chrome;
+            Manager.LaunchNewBrowser(BrowserType.Chrome,true);
             ActiveBrowser.NavigateTo("http://test.telerikacademy.com/Administration_Courses/CoursesGroups");
             var ff = Find.ByXPath<HtmlSpan>("//*[@id='MainContent']/div/span/span/span/span");
             var dd = Find.ById<HtmlUnorderedList>("CourseFilter_listbox")
@@ -162,7 +163,7 @@ namespace HW_TelrikFramework_Task1
         [TestMethod]
         public void SearchForWpf()
         {
-            Manager.LaunchNewBrowser();
+            Manager.LaunchNewBrowser(BrowserType.Chrome, true);
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Wpf";
@@ -188,7 +189,7 @@ namespace HW_TelrikFramework_Task1
         [TestMethod]
         public void SearchForQuality()
         {
-            Manager.LaunchNewBrowser();
+            Manager.LaunchNewBrowser(BrowserType.Chrome, true);
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Quality";
@@ -214,7 +215,7 @@ namespace HW_TelrikFramework_Task1
         [TestMethod]
         public void SearchForWebaii()
         {
-            Manager.LaunchNewBrowser();
+            Manager.LaunchNewBrowser(BrowserType.Chrome, true);
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Webaii";
