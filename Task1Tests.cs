@@ -147,9 +147,8 @@ namespace HW_TelrikFramework_Task1
 
         [TestMethod]
         public void CheckSelect()
-        {            
-            Manager.LaunchNewBrowser(BrowserType.Chrome,true);
-            Manager.Current.DialogMonitor.Start();
+        {
+            Manager.LaunchNewBrowser(BrowserType.Chrome, true);
             ActiveBrowser.NavigateTo("http://test.telerikacademy.com/Administration_Courses/CoursesGroups");
             var ff = Find.ByXPath<HtmlSpan>("//*[@id='MainContent']/div/span/span/span/span");
             var dd = Find.ById<HtmlUnorderedList>("CourseFilter_listbox")
@@ -163,7 +162,6 @@ namespace HW_TelrikFramework_Task1
         public void SearchForWpf()
         {
             Manager.LaunchNewBrowser(BrowserType.Chrome, true);
-            Manager.Current.DialogMonitor.Start();
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Wpf";
@@ -190,7 +188,6 @@ namespace HW_TelrikFramework_Task1
         public void SearchForQuality()
         {
             Manager.LaunchNewBrowser(BrowserType.Chrome, true);
-            Manager.Current.DialogMonitor.Start();
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Quality";
@@ -217,7 +214,6 @@ namespace HW_TelrikFramework_Task1
         public void SearchForWebaii()
         {
             Manager.LaunchNewBrowser(BrowserType.Chrome, true);
-            Manager.Current.DialogMonitor.Start();
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Webaii";
