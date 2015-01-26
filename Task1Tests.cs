@@ -149,6 +149,8 @@ namespace HW_TelrikFramework_Task1
         public void CheckSelect()
         {
             Manager.LaunchNewBrowser(BrowserType.Chrome, true);
+            Settings set = new Settings();
+            var a = set.DisableDialogMonitoring;
             ActiveBrowser.NavigateTo("http://test.telerikacademy.com/Administration_Courses/CoursesGroups");
             var ff = Find.ByXPath<HtmlSpan>("//*[@id='MainContent']/div/span/span/span/span");
             var dd = Find.ById<HtmlUnorderedList>("CourseFilter_listbox")
@@ -161,7 +163,7 @@ namespace HW_TelrikFramework_Task1
         [TestMethod]
         public void SearchForWpf()
         {
-            Manager.LaunchNewBrowser(BrowserType.Chrome, true);
+            Manager.LaunchNewBrowser(BrowserType.Chrome);
             ActiveBrowser.NavigateTo("http://telerikacademy.com");
 
             Find.ById<HtmlInputText>("SearchTerm").Text = "Wpf";
